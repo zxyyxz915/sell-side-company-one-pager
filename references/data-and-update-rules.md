@@ -15,6 +15,15 @@ Set `T` as the knowledge-base and one-pager cut-off. For every item retain:
 
 Reject or quarantine material with no identifiable source, publication date, or covered period.
 
+### Missing-data rule
+
+- If no qualified source exists, leave the corresponding output cell empty.
+- Do not use `0`, `—`, `N/A`, a guessed value, or prose such as `待核验` inside a numeric cell as a substitute for data. Use the separate data-gap table for explanation.
+- Zero is valid only when a traceable source explicitly reports zero for the same company, field, and period.
+- Do not infer a missing number from peers, industry averages, anonymous notes, partial screenshots, or visual estimation from a chart.
+- Do not back-solve a missing product value from consolidated data unless the remaining components are complete, definition-matched, and the residual formula is explicitly shown. Otherwise leave it empty.
+- A broker estimate may populate only a clearly labeled broker/consensus column. It must not fill a company-actual or analyst-derived field.
+
 ## 2. Minimum baseline package per company
 
 ### Official filings and presentations
@@ -107,13 +116,41 @@ Do not use a forecast published before the latest material disclosure without an
 ### Price
 
 - Label each price as realized, list, spot, contract, market average, or model assumption.
-- Match the price period to the volume period.
-- Do not substitute a current spot price for a historical realized price without a bridge.
+- Record product grade/specification, geography, tax basis, freight basis, currency, unit, observation frequency, and start/end dates. A price with an unknown definition is ineligible for profit calculation.
+- Match the price period to the volume period. Do not substitute a current spot price for a historical realized price without a bridge.
+- For an actual historical period, use the company-disclosed realized price for the same product and period. If it is not disclosed, derive `product revenue / product sales volume` only when both inputs come from qualified, definition-matched disclosures for the same period. Otherwise leave the realized-price cell empty.
+- For a current full-year estimate, combine year-to-date realized price with a qualified remaining-period base price using sales-volume weights. Do not apply a current spot quote to the entire year.
+- Select the remaining-period base price in this order: (1) current company guidance or traceable contract/settlement price; (2) a traceable benchmark average for the exact product definition; otherwise leave it empty.
+- When using a benchmark fallback, calculate both the latest 30-calendar-day average and 90-calendar-day average, each ending no more than 7 calendar days before `T`. For weekly data, use the latest 4-week and 13-week averages, with the final observation no more than 14 days before `T`.
+- Use the short-window average as the base only when it differs from the long-window average and the latest company-realized comparable price by no more than 15%. If either deviation exceeds 15%, stop automatic calculation, leave the forecast-price cell empty, and request human selection with the competing values shown.
+- Never use a period minimum, period maximum, one-day low/high, or an old cyclical trough as the base case. Do not select a quote because it produces a preferred profit result.
+- If the company discloses only a price range, retain the range. Do not silently take its midpoint, lower bound, or upper bound.
+- Verify the implied price `revenue / sales volume` against the selected price. A discrepancy above 5% requires a definition/period reconciliation before use.
 
 ### Cost
 
 - Distinguish cash cost, production cost, cost of sales, freight-inclusive cost, and full cost.
 - Do not compare differently defined costs as if they were the same.
+- Use a company-disclosed same-product, same-period unit cost where available. Derive unit cost only from matched product cost of sales and product sales volume.
+- Do not divide consolidated cost of sales by one product's volume or use a peer's unit cost as the company's cost.
+- For a current forecast, carry forward the latest qualified unit cost only when its definition is unchanged and no material input-cost or operating-status change has occurred. Otherwise update it through traceable inputs and an explicit formula, or leave it empty.
+- If the source provides only a cost range, preserve the range; do not select the lower bound to maximize profit or the upper bound to minimize profit.
+
+### Calculation eligibility gate
+
+Before calculating product revenue or profit, all material inputs must pass:
+
+| Check | Required condition |
+|---|---|
+| Identity | Exact company, product/segment, and project |
+| Period | Volume, price, and cost cover compatible periods |
+| Definition | Grade, geography, tax, freight, currency, and unit are known and compatible |
+| Freshness | Forecast inputs meet the price/cost freshness rules |
+| Provenance | Each input has a traceable source and publication/observation date |
+| Status | Actual, derived, analyst assumption, and broker forecast are clearly separated |
+| Outlier | Price guards and implied-price reconciliation pass |
+
+If any material check fails, leave that calculation and all dependent cells empty. Add the failure to the data-gap table; do not repair it with an unsupported assumption.
 
 ### Financial statements
 
@@ -137,7 +174,7 @@ When a new document arrives:
 3. compare extracted values with current stored values;
 4. classify each change as new, confirmed, revised, superseded, or conflicting;
 5. update the capacity/project ledger and earnings assumptions before rewriting narrative;
-6. recalculate revenue, gross profit, and net profit if a material volume, price, cost, tax, minority-interest, or consolidation assumption changes;
+6. re-run the eligibility gate and recalculate revenue, gross profit, and net profit only if all material volume, price, cost, tax, minority-interest, and consolidation inputs qualify;
 7. record an update log with old value, new value, reason, source, and model impact;
 8. flag for human review when conflict or earnings impact is material.
 
