@@ -9,7 +9,8 @@ Set `T` as the knowledge-base and one-pager cut-off. For every item retain:
 - publication date;
 - covered period;
 - data unit and currency;
-- evidence label `A/B/C/D`;
+- evidence label `A/B/C/D/E`;
+- source type and, for ima or reposted material, the underlying original source;
 - affected one-pager field;
 - whether the item supersedes an earlier value.
 
@@ -18,13 +19,64 @@ Reject or quarantine material with no identifiable source, publication date, or 
 ### Missing-data rule
 
 - If no qualified source exists, leave the corresponding output cell empty.
-- Do not use `0`, `—`, `N/A`, a guessed value, or prose such as `待核验` inside a numeric cell as a substitute for data. Use the separate data-gap table for explanation.
+- Do not use `0`, `—`, `N/A`, a guessed value, or prose such as `待核验` inside a numeric cell as a substitute for data. Omit broadly unavailable columns from the one-pager and record the detailed gap in working papers.
 - Zero is valid only when a traceable source explicitly reports zero for the same company, field, and period.
 - Do not infer a missing number from peers, industry averages, anonymous notes, partial screenshots, or visual estimation from a chart.
 - Do not back-solve a missing product value from consolidated data unless the remaining components are complete, definition-matched, and the residual formula is explicitly shown. Otherwise leave it empty.
 - A broker estimate may populate only a clearly labeled broker/consensus column. It must not fill a company-actual or analyst-derived field.
 
-## 2. Minimum baseline package per company
+## 2. Permitted sources and retrieval rules
+
+Use any connected or user-provided source that improves coverage, including ima knowledge bases, iFinD, 知识星球, 巨潮资讯网, stock-exchange websites, company investor-relations pages, broker reports, and traceable industry databases. Availability does not make sources equally authoritative.
+
+### ima knowledge base
+
+- Search the target-company folder and aliases for financial reports, operating announcements, presentations, meeting notes, broker reports, price data, and project updates.
+- Treat ima as a document container and retrieval layer. Determine the evidence grade from the document's original issuer, not from ima.
+- Prefer the original PDF or captured original link. Retain title, issuer, publication date, covered period, and ima file identifier/path.
+- Deduplicate copies stored under different names. Repeated copies are not independent confirmation.
+
+### 巨潮资讯网, stock exchanges, and company IR
+
+- Use 巨潮资讯网, 上交所/深交所/北交所, and company IR pages for original filings and announcements.
+- These are the default sources for reported actuals, project status, guidance, and corrections.
+- Search both the formal financial report and separate operating-data announcements; one may contain business revenue while the other contains the consolidated cost base.
+- If a portal mirror is easier to retrieve, verify title, ticker, date, and text against the official disclosure before grading it `A`.
+
+### iFinD and Wind
+
+- Use iFinD or Wind for standardized statements, single-quarter data, business composition, market/industry series, consensus, and named-broker forecasts.
+- Record the terminal field or table name, reporting period, extraction date, unit, and whether the value is reported, standardized, or estimated.
+- A blank standardized field does not prove that the company never disclosed the item; check the original filing and notes.
+- A populated field does not automatically prove a same-period company disclosure. Trace material product costs, margins, and realized prices back to the original source before treating them as actuals.
+
+### 知识星球 and third-party meeting notes
+
+- Search all relevant notes from the previous six months, plus older notes still needed to understand a live project or guidance change.
+- Retain author/institution, event type, event date, publication date, and management participants when available.
+- Use a note as evidence only when the event and date are traceable. Anonymous screenshots, unattributed excerpts, and reposts without an original event are leads, not facts.
+- A traceable management statement may explain direction, timing, or guidance, but does not override a later formal filing.
+- Do not convert qualitative comments such as `prices improved`, `orders were strong`, or `costs declined` into numerical actuals.
+
+### Other portals, news, and industry data
+
+- Use 东方财富, 同花顺资讯, 新浪财经, 雪球公告镜像, and news reports mainly for discovery or fallback access to an original document.
+- Use traceable industry sources for prices, utilization, inventory, and input costs; label them as market/industry indicators, never as company realized data.
+- Search snippets, AI summaries, and undated reposts cannot support a material number.
+
+### Retrieval order
+
+1. Newest official financial report and notes.
+2. Separate operating announcements, guidance, and corrections.
+3. Official results presentations and meeting records.
+4. ima archive for missing company documents, broker reports, and notes.
+5. iFinD/Wind standardized data and consensus.
+6. 知识星球 and traceable third-party notes.
+7. Industry databases and financial portals for remaining indicators or discovery.
+
+Do not stop after the first source merely because it contains many numbers. Cross-check the fields that determine the earnings conclusion.
+
+## 3. Minimum baseline package per company
 
 ### Official filings and presentations
 
@@ -48,7 +100,7 @@ Official exchange/company documents outrank all secondary sources.
 
 ### Financial and forecast data
 
-Prefer Wind or an equivalent licensed structured database for:
+Use iFinD, Wind, or an equivalent licensed structured database for:
 
 - three annual periods and eight single quarters of standardized financials;
 - reportable-segment or product composition where available;
@@ -56,7 +108,7 @@ Prefer Wind or an equivalent licensed structured database for:
 - contributor count and 30-/90-day forecast changes;
 - individual broker forecasts and publication dates when needed for reconciliation.
 
-Direct Wind-to-agent integration is not required. A controlled workflow may export three versioned workbooks into the knowledge base:
+Direct terminal-to-agent integration is not required. A controlled workflow may export three versioned workbooks into the knowledge base:
 
 1. `company_historical_financials_quarters.xlsx`
 2. `company_business_mix_operating_metrics.xlsx`
@@ -72,25 +124,27 @@ For material products only, obtain:
 - 12 months of utilization, inventory, or spread data where decision-useful;
 - latest transaction/realized-price evidence from the company when available.
 
-Use licensed or traceable sources such as Wind, Baiinfo, OilChem, exchange data, government statistics, or company disclosure. Do not use an undated web snippet as a model input.
+Use licensed or traceable sources such as iFinD, Wind, Baiinfo, OilChem, exchange data, government statistics, or company disclosure. Do not use an undated web snippet as a model input.
 
-## 3. Source hierarchy
+## 4. Source hierarchy
 
 Resolve conflicts in this order, while considering covered period and definitions:
 
 1. formal company filing or exchange announcement;
 2. official results presentation or official meeting record;
 3. government or exchange statistics;
-4. Wind or another standardized licensed database;
+4. iFinD, Wind, or another standardized licensed database;
 5. traceable industry database;
 6. broker report with named analyst and date;
 7. traceable third-party meeting note;
 8. financial portal or news report;
 9. anonymous repost or unverified excerpt.
 
-A lower-ranked source may be more current, but it must not silently overwrite a higher-ranked figure. Show both, explain the period/definition difference, and choose a modeling input explicitly.
+A lower-ranked source may be more current, but it must not silently overwrite a higher-ranked figure. Show both in working papers, explain the period/definition difference, and choose a modeling input explicitly. On the one-pager, show only the value needed for the earnings explanation.
 
-## 4. Freshness rules
+ima has no fixed rank. Use the rank of the underlying document: a company announcement stored in ima remains level 1; an anonymous note stored in ima remains unverified.
+
+## 5. Freshness rules
 
 | Data type | Baseline window | Refresh trigger |
 |---|---|---|
@@ -105,7 +159,7 @@ A lower-ranked source may be more current, but it must not silently overwrite a 
 
 Do not use a forecast published before the latest material disclosure without an explicit stale-data warning.
 
-## 5. Reconciliation rules
+## 6. Reconciliation rules
 
 ### Capacity
 
@@ -119,6 +173,7 @@ Do not use a forecast published before the latest material disclosure without an
 - Record product grade/specification, geography, tax basis, freight basis, currency, unit, observation frequency, and start/end dates. A price with an unknown definition is ineligible for profit calculation.
 - Match the price period to the volume period. Do not substitute a current spot price for a historical realized price without a bridge.
 - For an actual historical period, use the company-disclosed realized price for the same product and period. If it is not disclosed, derive `product revenue / product sales volume` only when both inputs come from qualified, definition-matched disclosures for the same period. Otherwise leave the realized-price cell empty.
+- A price appearing in an `industry conditions`, `market review`, or similar section of a company report remains an industry/market price unless the text explicitly identifies it as the company's transaction or realized price.
 - For a current full-year estimate, combine year-to-date realized price with a qualified remaining-period base price using sales-volume weights. Do not apply a current spot quote to the entire year.
 - Select the remaining-period base price in this order: (1) current company guidance or traceable contract/settlement price; (2) a traceable benchmark average for the exact product definition; otherwise leave it empty.
 - When using a benchmark fallback, calculate both the latest 30-calendar-day average and 90-calendar-day average, each ending no more than 7 calendar days before `T`. For weekly data, use the latest 4-week and 13-week averages, with the final observation no more than 14 days before `T`.
@@ -150,7 +205,7 @@ Before calculating product revenue or profit, all material inputs must pass:
 | Status | Actual, derived, analyst assumption, and broker forecast are clearly separated |
 | Outlier | Price guards and implied-price reconciliation pass |
 
-If any material check fails, leave that calculation and all dependent cells empty. Add the failure to the data-gap table; do not repair it with an unsupported assumption.
+If any material check fails, leave that calculation and all dependent cells empty. If most rows would be empty, omit the affected columns from the one-pager, state the disclosure boundary once, and record the detailed failure in the working-paper data-gap log. Do not repair it with an unsupported assumption.
 
 ### Financial statements
 
@@ -165,7 +220,7 @@ If any material check fails, leave that calculation and all dependent cells empt
 - Compare analyst model, consensus, and major broker range.
 - Explain differences; never average incompatible assumptions mechanically.
 
-## 6. Incremental update behavior
+## 7. Incremental update behavior
 
 When a new document arrives:
 
