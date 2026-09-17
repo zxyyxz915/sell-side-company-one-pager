@@ -61,7 +61,7 @@ Use the narrowest economically meaningful unit supported by evidence: product, s
 | Product/segment | Effective capacity | Output | Sales volume | Realized/assumed price | Unit cost | Unit gross profit | Revenue | Gross profit | Gross margin | Evidence |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
 
-For each row distinguish actual, implied, and forecast values. If quarterly segment disclosure is unavailable, use the latest official half-year or annual split and do not fabricate quarterly detail.
+For each row distinguish actual, derived, and forecast values. If quarterly segment disclosure is unavailable, use the latest official half-year or annual split and leave unavailable quarterly cells empty. Do not fabricate quarterly detail.
 
 ### Income-statement bridge
 
@@ -137,7 +137,11 @@ Q4 single-quarter = FY cumulative - 9M cumulative
 
 Record the calculation as evidence label `C` and retain both inputs.
 
-When decomposing revenue or profit changes, avoid false precision. Use disclosed quantities and prices where available; otherwise label the result as an estimate and provide a range when input uncertainty is material.
+When decomposing revenue or profit changes, avoid false precision. Use disclosed or otherwise qualified inputs. If an input is unavailable or fails the eligibility gate, leave the dependent result empty. Show a range only when the source itself discloses a range or the user explicitly requests scenario analysis.
+
+### Calculation precondition
+
+Do not run the formulas above until the volume, price, and cost inputs pass the calculation-eligibility gate in [data-and-update-rules.md](data-and-update-rules.md). A neat completed table is never more important than data integrity.
 
 ## 3. Required interpretation
 
@@ -157,7 +161,8 @@ The one-pager must explicitly answer:
 - Show YoY and QoQ only where the comparison is economically and seasonally meaningful.
 - Move detailed source notes and calculations to the supporting workbook or knowledge base.
 - Keep static company background to no more than roughly 10% of the page.
-- Do not hide uncertainty in polished prose. Use `待核验`, `公司未披露`, or `分析测算`.
+- Leave unsupported numeric cells empty. Explain them outside the table in the data-gap list; do not replace missing numbers with zero, dashes, `N/A`, or invented estimates.
+- Label valid derived figures as `分析测算` and retain their formulas and inputs.
 
 ## 5. Blocking acceptance checks
 
@@ -168,6 +173,13 @@ Do not label the deliverable complete if any of the following is true:
 - effective capacity includes planned or under-construction capacity;
 - a material project is double counted or uses superseded status;
 - a key price or cost assumption lacks a date, period, or source;
+- any unsupported field has been filled instead of left empty;
+- zero, a dash, or `N/A` has been used to disguise missing numeric data;
+- a product price uses a historical minimum, a one-day low, a stale trough, or a period minimum/maximum as the base case;
+- an annual forecast applies the latest spot price to the entire year without a year-to-date/remaining-period bridge;
+- the 30-day versus 90-day price guard fails and the model continues without human review;
+- price, volume, and cost differ in product definition, period, tax/freight basis, currency, or unit;
+- a disclosed price or cost range has been silently converted to a midpoint or one bound;
 - company-disclosed and analyst-estimated figures are mixed without labels;
 - product gross profit does not reconcile plausibly with consolidated gross profit;
 - attributable net profit ignores material tax, minority interests, or non-recurring items;
@@ -175,4 +187,4 @@ Do not label the deliverable complete if any of the following is true:
 - consensus predates material new results or operating information without warning;
 - the page is dominated by excluded background, valuation, risk, or industry-chain content.
 
-If blocked, return a table with `missing/incorrect field`, `current value`, `required evidence`, `preferred source`, and `impact on earnings`.
+If blocked, leave the affected output cells empty and return a table with `missing/incorrect field`, `current value or blank`, `failed rule`, `required evidence`, `preferred source`, and `impact on earnings`.
