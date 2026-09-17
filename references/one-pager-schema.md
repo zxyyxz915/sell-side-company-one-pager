@@ -1,190 +1,190 @@
 # One-Pager Schema and Acceptance Rules
 
-## Contents
+## 1. Outcome standard
 
-1. Page structure
-2. Required tables
-3. Calculation rules
-4. Presentation constraints
-5. Blocking acceptance checks
+The page is successful only if a reader can understand, in under two minutes:
 
-## 1. Page structure
+- why the latest revenue and profit changed;
+- whether the change came mainly from volume, price, cost, mix, expenses, or non-recurring items;
+- whether the latest quarter improved or deteriorated and why;
+- which current operating variables can change the next reporting period.
 
-The main page has five blocks. A block may be shortened only when the company genuinely lacks the relevant business structure, not to hide missing data.
+A collection of accurate tables can still fail this standard if it does not connect facts to earnings.
 
-| Block | Purpose | Target share |
-|---|---|---:|
-| Header and company snapshot | Identify the company, earnings engine, and data cut-off | 5%–10% |
-| Latest operations | Show what changed since the prior disclosure | 20% |
-| Product/business earnings split | Explain volume, price, cost, and gross profit | 30% |
-| Income-statement bridge | Reconcile gross profit to attributable net profit | 25% |
-| Forecast and consensus comparison | Show forecast assumptions and market benchmark | 15%–20% |
+## 2. Default page structure
 
-### Header and company snapshot
+Use four analytical blocks. Omit a block that has no decision-useful evidence; never fill space for template completeness.
 
-Include only:
+### Block 1 — Core conclusion and latest operating change
 
-- company name and ticker;
-- one-sentence earnings model;
-- core products or reportable segments;
-- latest financial reporting period;
-- operating-data cut-off and page update date.
+Write no more than three conclusion sentences. Together they should cover:
 
-Do not create a standalone multi-section company profile. Production locations belong here only if location materially changes costs or operating risk.
+1. the main cause of the latest profit change;
+2. the latest-quarter inflection or lack of inflection;
+3. the most important forward operating variable.
 
-### Latest operations
+Then show only three to five material operating changes:
 
-Show the three to five most material changes on the page, while retaining all valid six-month items in the knowledge base.
+| Date/period | What changed | Previous | Current | Earnings implication | Evidence |
+|---|---|---:|---:|---|---|
 
-| Date | Item | Previous state/value | Current state/value | Earnings implication | Source |
-|---|---|---|---|---|---|
+Include capacity or project status only when it changes production, sales, cost, consolidation scope, or the forecast period. Do not reproduce a full capacity ledger on the page.
 
-Cover, when material:
+### Block 2 — Business and driver split
 
-- production, sales volume, utilization, inventory, or orders;
-- realized or market prices and key input costs;
-- commissioning, ramp-up, maintenance, shutdown, or restart;
-- acquisition/disposal integration and consolidation timing;
-- revised management guidance.
+Use the narrowest company-disclosed business unit. Start with what is actually available.
 
-Maintain a capacity ledger:
+#### When revenue and gross profit are both disclosed
 
-| Product | Historical capacity | Current effective capacity | Ramping | Under construction | Planned | Expected contribution period | Source |
-|---|---:|---:|---:|---:|---:|---|---|
+| Product/segment | Revenue | YoY | Gross profit | Gross margin | Change driver | Evidence |
+|---|---:|---:|---:|---:|---|---|
 
-Count a project as effective capacity only after evidence of commissioning or commercial production. Record ramping capacity separately until stable production is supported.
+#### When only product/segment revenue is disclosed
 
-### Product/business earnings split
+| Product/segment | Revenue | YoY | Revenue share | Disclosed operating change | Earnings direction | Evidence |
+|---|---:|---:|---:|---|---|---|
 
-Use the narrowest economically meaningful unit supported by evidence: product, segment, mine, plant, or geography.
+Do not add empty columns for sales volume, realized price, unit cost, gross profit, and gross margin. Add one note below the table:
 
-| Product/segment | Effective capacity | Output | Sales volume | Realized/assumed price | Unit cost | Unit gross profit | Revenue | Gross profit | Gross margin | Evidence |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+> The company did not disclose same-period product sales volume, realized price, or cost; product-level gross profit cannot be calculated reliably.
 
-For each row distinguish actual, derived, and forecast values. If quarterly segment disclosure is unavailable, use the latest official half-year or annual split and leave unavailable quarterly cells empty. Do not fabricate quarterly detail.
+If the latest annual report contains a fuller product split, use it only as a compact historical reference. Label the period prominently and do not splice annual cost/margins into the current half-year or quarter.
 
-### Income-statement bridge
+#### Driver explanation
 
-| Item | Prior-year period | Previous quarter | Current period | YoY | QoQ | Main driver | Evidence |
-|---|---:|---:|---:|---:|---:|---|---|
-| Revenue | | | | | | | |
-| Cost of goods sold | | | | | | | |
-| Gross profit | | | | | | | |
-| Gross margin | | | | | | | |
-| Selling expense | | | | | | | |
-| Administrative expense | | | | | | | |
-| R&D expense | | | | | | | |
-| Finance expense | | | | | | | |
-| Investment income | | | | | | | |
-| Other income | | | | | | | |
-| Impairment | | | | | | | |
-| Income tax | | | | | | | |
-| Minority interests | | | | | | | |
-| Attributable net profit | | | | | | | |
-| Recurring attributable net profit | | | | | | | |
+After the business table, state the supported causal chain:
 
-Add a compact profit-change bridge when evidence supports it:
+`volume/project status -> revenue effect; market or realized price -> revenue/margin effect; input cost/utilization -> margin effect; mix -> residual effect`
 
-| Driver | Estimated profit impact | Direction | Method/source |
-|---|---:|---|---|
-| Volume | | Positive/negative | |
-| Price | | Positive/negative | |
-| Unit cost | | Positive/negative | |
-| Expenses | | Positive/negative | |
-| Non-recurring items | | Positive/negative | |
-| Tax and minority interests | | Positive/negative | |
+Quantify each link only when eligible. Otherwise state direction and evidence without manufacturing an amount.
 
-### Forecast and consensus comparison
+### Block 3 — Income-statement and quarterly bridge
 
-Forecast the current year and next two years unless the assignment states otherwise.
+This is mandatory whenever financial statements are available.
 
-| Metric | Latest actual | FY0E | FY1E | FY2E |
-|---|---:|---:|---:|---:|
-| Revenue | | | | |
+#### Profit-change bridge
+
+| Driver | Change or profit impact | Direction | Explanation | Evidence |
+|---|---:|---|---|---|
 | Gross profit | | | | |
+| Selling, administrative, R&D, and finance expenses | | | | |
+| Other income, investment income, impairment, and non-operating items | | | | |
+| Profit before tax | | | | |
+| Tax | | | | |
+| Minority interests | | | | |
 | Attributable net profit | | | | |
-| Recurring attributable net profit | | | | |
-| EPS | | | | |
 
-Compare the model with market forecasts:
+Use signs from the perspective of impact on profit. The bridge must reconcile to the reported attributable-net-profit change, subject only to disclosed rounding.
 
-| Metric | Analyst model | Wind/equivalent consensus | Broker range | Difference | Main assumption causing difference |
-|---|---:|---:|---:|---:|---|
+Do not list every income-statement line when several immaterial lines can be grouped without losing the causal explanation.
 
-Include the consensus extraction date and contributor count. Do not show PE, PB, EV/EBITDA, target price, rating, or upside.
+#### Latest-quarter inflection
 
-## 2. Calculation rules
+| Metric | Prior-year quarter | Previous quarter | Current quarter | YoY | QoQ | Interpretation |
+|---|---:|---:|---:|---:|---:|---|
+| Revenue | | | | | | |
+| Cost of sales | | | | | | |
+| Gross profit | | | | | | |
+| Gross margin | | | | | | |
+| Attributable net profit | | | | | | |
 
-Use consistent units and show conversions.
+Derive a single quarter from cumulative reports only with explicit formulas and retained inputs. The interpretation must identify whether the change was driven mainly by revenue or margin; do not claim unit-cost or price improvement without evidence.
+
+### Block 4 — Forward earnings watch
+
+Show only the variables that can materially change the next reporting period:
+
+| Variable | Latest verified state | Direction/change | Earnings channel | Next verification source |
+|---|---|---|---|---|
+
+Examples include product prices, key input costs, utilization, orders, inventory, commissioning/ramp-up, shutdowns, or consolidation changes.
+
+Market and industry prices are indicators, not company realized prices. Label them by specification, geography, tax/freight basis, frequency, and observation period.
+
+Consensus is optional:
+
+| Metric | FY0E consensus | Named-broker range | Main disagreement | Extraction date |
+|---|---:|---:|---|---|
+
+Do not include rating counts, target prices, or valuation. If no qualified analyst model exists, do not create empty self-forecast columns merely to complete a template.
+
+## 3. Calculation rules
+
+Use consistent units and retain formulas:
 
 ```text
-utilization = output / period-effective capacity
-sales ratio = sales volume / output
-revenue = sales volume × realized or assumed price
-unit gross profit = realized or assumed price - unit cost
-product gross profit = sales volume × unit gross profit
-gross profit = revenue - cost of goods sold
+gross profit = revenue - cost of sales
+gross margin = gross profit / revenue
 attributable net profit = net profit - minority interests
-```
-
-For cumulative filings, calculate single-quarter figures explicitly, for example:
-
-```text
+Q2 single-quarter = H1 cumulative - Q1 cumulative
 Q3 single-quarter = 9M cumulative - H1 cumulative
-Q2 single-quarter = H1 cumulative - Q1
 Q4 single-quarter = FY cumulative - 9M cumulative
 ```
 
-Record the calculation as evidence label `C` and retain both inputs.
+Product calculations require eligible same-period inputs:
 
-When decomposing revenue or profit changes, avoid false precision. Use disclosed or otherwise qualified inputs. If an input is unavailable or fails the eligibility gate, leave the dependent result empty. Show a range only when the source itself discloses a range or the user explicitly requests scenario analysis.
+```text
+realized price = product revenue / product sales volume
+unit cost = product cost of sales / product sales volume
+unit gross profit = realized price - unit cost
+product gross profit = product revenue - product cost of sales
+```
 
-### Calculation precondition
+Do not calculate these merely because the formulas are available. Apply the eligibility gate in [data-and-update-rules.md](data-and-update-rules.md).
 
-Do not run the formulas above until the volume, price, and cost inputs pass the calculation-eligibility gate in [data-and-update-rules.md](data-and-update-rules.md). A neat completed table is never more important than data integrity.
+## 4. Editing test: analysis or clutter
 
-## 3. Required interpretation
+For every table, row, and paragraph ask:
 
-The one-pager must explicitly answer:
+1. Does it quantify an earnings change?
+2. Does it explain a cause?
+3. Does it identify a forward earnings variable?
+4. Is it necessary to understand or verify one of the above?
 
-1. What changed since the previous disclosure?
-2. Which product or segment contributes the most revenue and gross profit?
-3. Is the earnings change driven mainly by volume, price, cost, expenses, or non-recurring items?
-4. What is the current effective capacity rather than merely announced capacity?
-5. What operating assumptions support the full-year profit forecast?
-6. Why does the forecast differ from consensus or major brokers?
+If all four answers are no, remove it from the page and retain it only in the knowledge base if useful.
 
-## 4. Presentation constraints
+Usually remove:
 
-- Prefer four compact tables and no more than three short conclusion sentences.
-- Use one unit per column and state whether monetary figures are RMB mn, RMB 100mn, USD mn, or another unit.
-- Show YoY and QoQ only where the comparison is economically and seasonally meaningful.
-- Move detailed source notes and calculations to the supporting workbook or knowledge base.
-- Keep static company background to no more than roughly 10% of the page.
-- Leave unsupported numeric cells empty. Explain them outside the table in the data-gap list; do not replace missing numbers with zero, dashes, `N/A`, or invented estimates.
-- Label valid derived figures as `分析测算` and retain their formulas and inputs.
+- shareholder counts and ownership percentages;
+- ratings and target-price summaries;
+- corporate history and generic business descriptions;
+- complete project or meeting-note inventories;
+- daily price tables with multiple unused averaging windows;
+- connector tests, database-field diagnostics, and missing-data mechanics;
+- repeated conclusions presented in both tables and prose.
 
-## 5. Blocking acceptance checks
+## 5. Disclosure-boundary handling
 
-Do not label the deliverable complete if any of the following is true:
+- Do not display a wide row of empty numeric cells.
+- Omit unavailable columns when their absence affects most rows.
+- State the disclosure boundary once beneath the relevant table.
+- Keep a detailed missing-evidence log in working papers, not on the main page.
+- When a requested split is impossible, say which level is complete: for example, `business revenue split complete; product gross-profit and volume-price-cost split unavailable; consolidated profit bridge complete`.
 
-- the newest material official results briefing or operating disclosure is absent;
-- the six-month material meeting-note timeline is incomplete without explanation;
-- effective capacity includes planned or under-construction capacity;
-- a material project is double counted or uses superseded status;
-- a key price or cost assumption lacks a date, period, or source;
-- any unsupported field has been filled instead of left empty;
-- zero, a dash, or `N/A` has been used to disguise missing numeric data;
-- a product price uses a historical minimum, a one-day low, a stale trough, or a period minimum/maximum as the base case;
-- an annual forecast applies the latest spot price to the entire year without a year-to-date/remaining-period bridge;
-- the 30-day versus 90-day price guard fails and the model continues without human review;
-- price, volume, and cost differ in product definition, period, tax/freight basis, currency, or unit;
-- a disclosed price or cost range has been silently converted to a midpoint or one bound;
-- company-disclosed and analyst-estimated figures are mixed without labels;
-- product gross profit does not reconcile plausibly with consolidated gross profit;
-- attributable net profit ignores material tax, minority interests, or non-recurring items;
-- the forecast is only a copied consensus number with no operating assumptions;
-- consensus predates material new results or operating information without warning;
-- the page is dominated by excluded background, valuation, risk, or industry-chain content.
+## 6. Blocking acceptance checks
 
-If blocked, leave the affected output cells empty and return a table with `missing/incorrect field`, `current value or blank`, `failed rule`, `required evidence`, `preferred source`, and `impact on earnings`.
+Do not call the page complete if:
+
+- it classifies data but does not reconcile the latest profit change;
+- the core conclusion is buried after company background, capacity history, or price tables;
+- an industry average or spot quote is described as company realized price;
+- current-period product profit is calculated from annual-period costs or mismatched product classifications;
+- unsupported product columns are filled, or broad empty tables dominate the page;
+- actuals, analyst calculations, market indicators, meeting-note claims, and forecasts are not clearly separated;
+- the latest official operating/results material is missing without explanation;
+- a material project is double counted or planned capacity is treated as effective;
+- the quarterly bridge does not reconcile to cumulative filings;
+- the page repeats database search limitations or source-collection process instead of explaining earnings;
+- more than roughly 10% of the page is static background;
+- excluded valuation, ratings, target prices, generic risks, or catalyst content appears without explicit request.
+
+## 7. Final compression pass
+
+Before delivery:
+
+1. put the profit explanation first;
+2. merge immaterial income-statement lines;
+3. reduce operating changes to the three to five most consequential;
+4. replace long price histories with latest level, comparable-period change, and earnings implication;
+5. delete repeated facts and workflow commentary;
+6. keep no more than four compact tables plus three conclusion sentences unless the user requests a longer tracker.
