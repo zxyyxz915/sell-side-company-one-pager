@@ -1,4 +1,4 @@
 interface:
   display_name: "卖方公司一页纸"
-  short_description: "按最新经营、量价成本、利润表和一致预期生成公司一页纸"
-  default_prompt: "请使用 $sell-side-company-one-pager 基于现有资料制作或审查公司一页纸。"
+  short_description: "解释最新经营与利润变化，删除无效信息"
+  default_prompt: "请使用 $sell-side-company-one-pager 基于现有资料制作或审查公司一页纸，重点完成业务驱动和利润表拆分。"
